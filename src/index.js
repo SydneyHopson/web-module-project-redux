@@ -8,10 +8,13 @@ import reducer from './reducers';
 import App from './components/App';
 import { BrowserRouter as Router } from 'react-router-dom';
 import './index.css';
+const store = createStore(reducer);
 
 ReactDOM.render(
-  <Router>
+  <Provider store={store}>
+    <Router>
       <App />
-  </Router>,
+   </Router>
+  </Provider>,
   document.getElementById('root')
 );
